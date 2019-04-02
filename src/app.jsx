@@ -39,6 +39,60 @@ class App extends Component {
       amountReceived: e.target.value
     });
   }
+  
+  //calculations
+
+  calculate(amountDue, amountReceived) {
+    
+    //dealing with dollar amounts
+    const changeDue = (amountReceived - amountDue).toFixed(2);
+    const dollarsTotal = Math.trunc(changeDue); //returns the integer part of a number by removing any fractional digits.
+
+    //indiviual bill calculations:
+    const twenties = Math.floor(dollarsTotal/20);
+    const tens = Math.floor((dollarsTotal % 20)/10);
+    const fives = Math.floor(((dollarsTotal % 20)%10)/5);
+    const ones = Math.floor((dollarsTotal %20)%10)%5;
+
+    //dealing with dollar amounts:
+    const centsConverted = Math.round(changeDue * 100);
+    const cents = Number((centsConverted.toString().slice(-2)));
+
+    //individual coin calculations:
+    const quarters = Math.floor(cents/25);
+    const dimes = Math.floor((cents%25)/10);
+    const nickles = Math.floor(((cents%25)%10)/5);
+    const pennies = Math.floor((cents%25)%10)%5;
+
+    console.log(twenties, tens, fives, ones, quarters, dimes, nickles, pennies);
+
+    this.setState({
+      changeDue: 'The total change due is $' + changeDue,
+      twenties,
+      tens,
+      tens,
+      fives,
+      ones,
+      quarters,
+      dimes,
+      nickles,
+      pennies,
+    });
+  }
+
+    handleClick(e) {
+      e.preventDefault();
+
+      const amountDue = this.state.amountDue;
+      const amountReceived = this.state.amountReceived;
+
+      this.calculate(amountDue, amountReceived);
+    }
+
+
+
+
+
     //this is the JSX for the HTML to render.
   render() {
     <div className= "container">
