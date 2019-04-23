@@ -134,7 +134,7 @@ And that's it! [Submit your project](https://goo.gl/forms/wx8DLSus7s88lk043) and
 
 #Site deployed to Now at the following URL
 
-https://change-calculator-e084gczog.now.sh/
+https://tsr-react100-change-calculator.herokuapp.com/
 
 #Thank you for taking the time to look at my projects,
 

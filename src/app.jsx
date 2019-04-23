@@ -38,34 +38,34 @@ class App extends Component {
 
   calculate(amountDue, amountReceived) {
         // dealing with dollars below
-    let changeDue = (amountReceived - amountDue).toFixed(2);
-    let dollarsTotal = Math.trunc(changeDue);
+    const changeDue = (amountReceived - amountDue).toFixed(2);
+    const dollarsTotal = Math.trunc(changeDue);
         // individual bill calculations
-    let twenties = Math.floor(dollarsTotal / 20);
-    let tens = Math.floor((dollarsTotal % 20) / 10);
-    let fives = Math.floor(((dollarsTotal % 20) % 10) / 5);
-    let ones = Math.floor((dollarsTotal % 20) % 10) % 5;
+    const twenties = Math.floor(dollarsTotal / 20);
+    const tens = Math.floor((dollarsTotal % 20) / 10);
+    const fives = Math.floor(((dollarsTotal % 20) % 10) / 5);
+    const ones = Math.floor((dollarsTotal % 20) % 10) % 5;
         // dealing with cents below
-    let centsConverted = Math.round(changeDue * 100);
-    let cents = Number(centsConverted.toString().slice(-2));
+    const centsConverted = Math.round(changeDue * 100);
+    const cents = Number(centsConverted.toString().slice(-2));
         // individual coin calculations
-    let quarters = Math.floor(cents / 25);
-    let dimes = Math.floor((cents % 25) / 10);
-    let nickels = Math.floor(((cents % 25) % 10) / 5);
-    let pennies = Math.floor((cents % 25) % 10) % 5;
+    const quarters = Math.floor(cents / 25);
+    const dimes = Math.floor((cents % 25) / 10);
+    const nickels = Math.floor(((cents % 25) % 10) / 5);
+    const pennies = Math.floor((cents % 25) % 10) % 5;
 
         // console.log(twenties, tens, fives, ones, quarters, dimes, nickels, pennies);
 
     this.setState({
       changeDue: `The total change due is $${changeDue}`,
-      twenties: twenties,
-      tens: tens,
-      fives: fives,
-      ones: ones,
-      quarters: quarters,
-      dimes: dimes,
-      nickels: nickels,
-      pennies: pennies
+      twenties,
+      tens,
+      fives,
+      ones,
+      quarters,
+      dimes,
+      nickels,
+      pennies
     });
   }
 
@@ -148,7 +148,10 @@ class App extends Component {
                     <div className='panel panel-default'>
                           <div className='well panel-footer'>
                               <h4 className='text-center'>Tens</h4>
-                              <p name='output-tens' className=' change lead text-center'>
+                              <p
+                                  name='output-tens'
+                                  className=' change lead text-center'
+                                >
                                   {this.state.tens}
                                 </p>
                             </div>
@@ -158,7 +161,10 @@ class App extends Component {
                     <div className='panel panel-default'>
                           <div className='well panel-footer'>
                               <h4 className='text-center'>Fives</h4>
-                              <p name='output-fives' className=' change lead text-center'>
+                              <p
+                                  name='output-fives'
+                                  className=' change lead text-center'
+                                >
                                   {this.state.fives}
                                 </p>
                             </div>
@@ -168,7 +174,10 @@ class App extends Component {
                     <div className='panel panel-default'>
                           <div className='well panel-footer'>
                               <h4 className='text-center'>Ones</h4>
-                              <p name='output-ones' className='change lead text-center'>
+                              <p
+                                  name='output-ones'
+                                  className='change lead text-center'
+                                >
                                   {this.state.ones}
                                 </p>
                             </div>
@@ -194,7 +203,10 @@ class App extends Component {
                     <div className='panel panel-default'>
                           <div className='well panel-footer'>
                               <h4 className='text-center'>Dimes</h4>
-                              <p name='output-dimes' className=' change lead text-center'>
+                              <p
+                                  name='output-dimes'
+                                  className=' change lead text-center'
+                                >
                                   {this.state.dimes}
                                 </p>
                             </div>
