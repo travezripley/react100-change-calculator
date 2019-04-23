@@ -1,14 +1,16 @@
-
-
+## Breakings News
 
 ## Third Project in the React100 * Module @ San Diego Code School
 
-#Author - Michel Roberts JR.
+# Author - Michel Roberts JR.
 
-#Modified by Travis Ripley * Started April 2nd, 2019 09:30
+# Modified by Travis Ripley * Started April 2nd, 2019 09:30
+
+
+## Stay Tuned
+
 
 I will be logging my updates as a work through this project.
-
 
 # Change Calculator
 
